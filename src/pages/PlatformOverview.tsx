@@ -63,6 +63,12 @@ export const PlatformOverview = () => {
 			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
 		},
 		{
+			label: "Total Manual Bets",
+			value: Number(betData?.data?.manualSingleBets),
+			displayValue: Number(betData?.data?.manualSingleBets),
+			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
+		},
+		{
 			label: "Total Premium",
 			value: Number(betData?.data?.totalSingleBetsPremium),
 			displayValue: `$ ${formatOrParseNumber(
@@ -92,6 +98,12 @@ export const PlatformOverview = () => {
 			label: "Total Bets",
 			value: Number(betData?.data?.allComboBets),
 			displayValue: Number(betData?.data?.allComboBets),
+			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
+		},
+		{
+			label: "Total Manual Bets",
+			value: Number(betData?.data?.manualComboBets),
+			displayValue: Number(betData?.data?.manualComboBets),
 			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
 		},
 		{

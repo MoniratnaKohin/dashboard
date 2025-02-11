@@ -45,6 +45,7 @@ export function DataTable<T>({
 							<tr key={index}>
 								{columns.map((column) => {
 									const shouldShowTitle =
+										String(column.accessor) === "userAddress" ||
 										String(column.accessor) === "amount" ||
 										String(column.accessor) === "premium" ||
 										String(column.accessor) === "feesCollected";
@@ -54,8 +55,10 @@ export function DataTable<T>({
 											className="px-6 py-4 text-left whitespace-nowrap text-xs text-white"
 											{...(shouldShowTitle && {
 												title:
-													String(column.accessor) === "premium" ||
-													String(column.accessor) === "feesCollected"
+													String(column.accessor) === "userAddress"
+														? String(row[column.accessor])
+														: String(column.accessor) === "premium" ||
+														  String(column.accessor) === "feesCollected"
 														? (Number(row[column.accessor]) / 10 ** 6).toFixed(
 																2
 														  )
@@ -70,15 +73,24 @@ export function DataTable<T>({
 											(column.accessor === "manualAtTxn" &&
 												row[column.accessor] !== null) ||
 											(column.accessor === "expiredAtTxn" &&
-												row[column.accessor] !== null) ? (
+												row[column.accessor] !== null) ||
+											column.accessor === "userAddress" ? (
 												<a
-													href={`https://polygonscan.com/tx/${String(
-														row[column.accessor]
-													)}`}
+													href={
+														column.accessor === "userAddress"
+															? `https://polygonscan.com/address/${String(
+																	row[column.accessor]
+															  )}`
+															: `https://polygonscan.com/tx/${String(
+																	row[column.accessor]
+															  )}`
+													}
 													target="_blank"
 													style={{ color: "#82FF1F" }}
 												>
-													View Txn
+													{column.accessor === "userAddress"
+														? "View Address"
+														: "View Txn"}
 												</a>
 											) : column.accessor === "week" ? (
 												String("Week")
