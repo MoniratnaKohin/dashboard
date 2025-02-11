@@ -57,13 +57,21 @@ export function DataTable<T>({
 												title:
 													String(column.accessor) === "userAddress"
 														? String(row[column.accessor])
-														: String(column.accessor) === "premium" ||
-														  String(column.accessor) === "feesCollected"
+														: String(column.accessor) === "premium"
+														? (Number(row[column.accessor]) * 10 ** 6).toFixed()
+														: String(column.accessor) === "feesCollected"
 														? (Number(row[column.accessor]) / 10 ** 6).toFixed(
 																2
 														  )
 														: Number(row[column.accessor]).toFixed(2),
 											})}
+											onClick={() => {
+												if (column.accessor === "premium") {
+													navigator.clipboard.writeText(
+														String(row[column.accessor])
+													);
+												}
+											}}
 										>
 											{column.accessor === "transactionHash" ||
 											(column.accessor === "claimableTxn" &&
