@@ -25,27 +25,33 @@ export const PlatformOverview = () => {
 		{
 			label: "Platform TVL",
 			value: Number(tableData?.data?.insuranceTVL),
-			displayValue: formatOrParseNumber(Number(tableData?.data?.insuranceTVL)),
+			displayValue: `${formatOrParseNumber(
+				Number(tableData?.data?.insuranceTVL)
+			)} USDT`,
 			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
 		},
 		{
 			label: "Platform Volume",
 			value: Number(tableData?.data?.platformVol),
-			displayValue: formatOrParseNumber(Number(tableData?.data?.platformVol)),
+			displayValue: `${formatOrParseNumber(
+				Number(tableData?.data?.platformVol)
+			)} USDT`,
 			icon: <FiBarChart className="text-[#82FF1F] text-2xl" />,
 		},
 		{
 			label: "Total Fees Collected",
 			value: Number(tableData?.data?.totalFees) / 10 ** 6,
-			displayValue: formatOrParseNumber(
+			displayValue: `${formatOrParseNumber(
 				Number(tableData?.data?.totalFees) / 10 ** 6
-			),
+			)} USDT`,
 			icon: <FiDollarSign className="text-[#82FF1F] text-2xl" />,
 		},
 		{
 			label: "Total Premiums Collected",
 			value: Number(tableData?.data?.totalPremium),
-			displayValue: formatOrParseNumber(Number(tableData?.data?.totalPremium)),
+			displayValue: `${formatOrParseNumber(
+				Number(tableData?.data?.totalPremium)
+			)} USDT`,
 			icon: <FiDollarSign className="text-[#82FF1F] text-2xl" />,
 		},
 		{
@@ -57,13 +63,13 @@ export const PlatformOverview = () => {
 	];
 	const singleBetStats = [
 		{
-			label: "Total Bets",
+			label: "Total Covers",
 			value: Number(betData?.data?.allSingleBets),
 			displayValue: Number(betData?.data?.allSingleBets),
 			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
 		},
 		{
-			label: "Total Manual Bets",
+			label: "Total Manual Covers",
 			value: Number(betData?.data?.manualSingleBets),
 			displayValue: Number(betData?.data?.manualSingleBets),
 			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
@@ -95,13 +101,13 @@ export const PlatformOverview = () => {
 	];
 	const comboBetStats = [
 		{
-			label: "Total Bets",
+			label: "Total Covers",
 			value: Number(betData?.data?.allComboBets),
 			displayValue: Number(betData?.data?.allComboBets),
 			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
 		},
 		{
-			label: "Total Manual Bets",
+			label: "Total Manual Covers",
 			value: Number(betData?.data?.manualComboBets),
 			displayValue: Number(betData?.data?.manualComboBets),
 			icon: <FiDatabase className="text-[#82FF1F] text-2xl" />,
@@ -163,7 +169,7 @@ export const PlatformOverview = () => {
 			</div>
 
 			<h1 className="text-2xl font-bold text-[#82FF1F] mb-8">
-				Single bets overview
+				Single Covers overview
 			</h1>
 
 			<div className="bg-[#171717] rounded-lg shadow">
@@ -190,7 +196,7 @@ export const PlatformOverview = () => {
 				</div>
 			</div>
 			<h1 className="text-2xl font-bold text-[#82FF1F] mb-8">
-				Combo bets overview
+				Combo Covers overview
 			</h1>
 
 			<div className="bg-[#171717] rounded-lg shadow">
