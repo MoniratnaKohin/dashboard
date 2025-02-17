@@ -45,6 +45,7 @@ export function DataTable<T>({
 							<tr key={index}>
 								{columns.map((column) => {
 									const shouldShowTitle =
+										String(column.accessor) === "user" ||
 										String(column.accessor) === "userAddress" ||
 										String(column.accessor) === "amount" ||
 										String(column.accessor) === "premium" ||
@@ -55,7 +56,8 @@ export function DataTable<T>({
 											className="px-6 py-4 text-left whitespace-nowrap text-xs text-white"
 											{...(shouldShowTitle && {
 												title:
-													String(column.accessor) === "userAddress"
+													String(column.accessor) === "userAddress" ||
+													String(column.accessor) === "user"
 														? String(row[column.accessor])
 														: String(column.accessor) === "premium"
 														? (Number(row[column.accessor]) * 10 ** 6).toFixed()

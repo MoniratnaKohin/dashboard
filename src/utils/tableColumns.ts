@@ -61,14 +61,18 @@ export const tableColumns = {
 			render: (value: string) => truncateAddress(value),
 		},
 		{
-			header: "Premium",
-			accessor: "premium",
-			render: (value: number) => `${(value / 10 ** 6).toFixed(2)} USDT`,
+			header: "Cover ID",
+			accessor: "coverId",
 		},
 		{
 			header: "Date",
 			accessor: "timestamp",
 			render: (value: string) => new Date(value).toLocaleDateString(),
+		},
+		{
+			header: "Premium",
+			accessor: "premium",
+			render: (value: number) => `${(value / 10 ** 6).toFixed(2)} USDT`,
 		},
 		{
 			header: "bet Amount",
@@ -80,8 +84,10 @@ export const tableColumns = {
 			accessor: "betId",
 		},
 		{
-			header: "Cover ID",
-			accessor: "coverId",
+			header: "Type",
+			accessor: "betType",
+			render: (value: number) =>
+				`${Number(value) === 0 ? `Single Bet` : `Combo Bet`}`,
 		},
 		{
 			header: "TxnHash",
