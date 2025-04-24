@@ -14,6 +14,12 @@ export default defineConfig(({ mode }) => {
 			"import.meta.env.VITE_KOHIN_API_URL": JSON.stringify(
 				env.REACT_APP_KOHIN_API_URL
 			),
+			"import.meta.env.VITE_SUBGRAPH_API_URL": JSON.stringify(
+ 				env.REACT_APP_KOHIN_SUBGRAPH_URL
+ 			),
+ 			"import.meta.env.VITE_INSURANCE_POOL_CONTRACT": JSON.stringify(
+ 				env.REACT_APP_INSURANCE_POOL_CONTRACT
+ 			),
 		},
 		plugins: [react()],
 		optimizeDeps: {

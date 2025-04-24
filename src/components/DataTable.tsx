@@ -48,6 +48,7 @@ export function DataTable<T>({
 										String(column.accessor) === "user" ||
 										String(column.accessor) === "userAddress" ||
 										String(column.accessor) === "amount" ||
+										String(column.accessor) === "rawAmount" ||
 										String(column.accessor) === "premium" ||
 										String(column.accessor) === "feesCollected";
 									return (
