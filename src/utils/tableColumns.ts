@@ -163,7 +163,9 @@ export const tableColumns = {
 			header: "Insurance TVL",
 			accessor: "insuranceTvl",
 			render: (value: number) =>
-				`${formatOrParseNumber(Number(value.toFixed(2)))} USDT`,
+				value === null
+					? `0 USDT`
+					: `${formatOrParseNumber(Number(value.toFixed(2)))} USDT`,
 		},
 		{
 			header: "Pool TVL",
