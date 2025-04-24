@@ -7,13 +7,11 @@ import { Tabs } from "../components/Tabs";
 import { tableColumns } from "../utils/tableColumns";
 import { MetricsChartVolume } from "../components/MetricsChartVolume";
 import { DataTableForMetrics } from "../components/DataTableForMetrics";
-import { useTvlData } from "../hooks/useTvlData";
 
 export const MetricsPage = () => {
 	const [activeTab, setActiveTab] = useState(METRICS_TABS[0].id);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [coverStatus, setCoverStatus] = useState("Active");
-	const { data: tvlDataFromContract } = useTvlData();
 	const { tvlData, volumeData, isLoading } = useMetricsData();
 	const { data: tableData, isLoading: tableLoading } = useTableData(
 		activeTab,
@@ -79,7 +77,7 @@ export const MetricsPage = () => {
 							data={tvlData.history}
 							title="Insurance TVL"
 							color="#3b82f6"
-							currentTVL={Number(tvlDataFromContract) / 10 ** 6}
+							currentTVL={Number(tvlData.tvl) + Number(tvlData.totalDonations)}
 						/>
 						<MetricsChartVolume
 							data={volumeData.history}
