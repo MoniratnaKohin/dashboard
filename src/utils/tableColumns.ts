@@ -13,8 +13,8 @@ export const tableColumns = {
 		{
 			header: "Amount",
 			accessor: "rawAmount",
- 			render: (value: number) =>
- 				`${formatOrParseNumber(Number(value / 10 ** 6))} USDT`,
+			render: (value: number) =>
+				`${formatOrParseNumber(Number(value / 10 ** 6))} USDT`,
 		},
 		{
 			header: "Date",
@@ -160,8 +160,8 @@ export const tableColumns = {
 			accessor: "days",
 		},
 		{
-			header: "TVL",
-			accessor: "tvl",
+			header: "Insurance TVL",
+			accessor: "insuranceTvl",
 			render: (value: number) =>
 				`${formatOrParseNumber(Number(value.toFixed(2)))} USDT`,
 		},
