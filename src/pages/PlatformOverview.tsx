@@ -175,33 +175,33 @@ export const PlatformOverview = () => {
 				</div>
 			</div>
 
-			{/* <h1 className="text-2xl font-bold text-[#82FF1F] mb-8">
- 				Single Covers overview
- 			</h1>
- 
- 			<div className="bg-[#171717] rounded-lg shadow">
- 				<div className="px-4 sm:px-6 py-6 w-[1000px] xl:w-[1100px]">
- 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
- 						{singleBetStats.map((stat, index) => (
- 							<div
- 								key={index}
- 								className="relative bg-[#2c2c2c] rounded-lg p-6 text-white flex flex-col items-center justify-center shadow-md hover:shadow-lg transition-shadow duration-200 group"
- 							>
- 								<div className="mb-2">{stat.icon}</div>
- 								<div className="text-lg font-semibold">{stat.label}</div>
- 								<div className="text-2xl font-bold text-[#82FF1F]">
- 									{stat.displayValue}
- 								</div>
- 
- 								
- 								<div className="absolute bottom-12 bg-black text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
- 									Value: {stat.value.toFixed(2)}
- 								</div>
- 							</div>
- 						))}
- 					</div>
- 				</div>
- 			</div> */}
+			<h1 className="text-2xl font-bold text-[#82FF1F] mb-8">
+				Single Covers overview
+			</h1>
+
+			<div className="bg-[#171717] rounded-lg shadow">
+				<div className="px-4 sm:px-6 py-6 w-[1000px] xl:w-[1100px]">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{singleBetStats.map((stat, index) => (
+							<div
+								key={index}
+								className="relative bg-[#2c2c2c] rounded-lg p-6 text-white flex flex-col items-center justify-center shadow-md hover:shadow-lg transition-shadow duration-200 group"
+							>
+								<div className="mb-2">{stat.icon}</div>
+								<div className="text-lg font-semibold">{stat.label}</div>
+								<div className="text-2xl font-bold text-[#82FF1F]">
+									{stat.displayValue}
+								</div>
+
+								{/* Tooltip */}
+								<div className="absolute bottom-12 bg-black text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+									Value: {stat.value.toFixed(2)}
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
 			<h1 className="text-2xl font-bold text-[#82FF1F] mb-8">
 				Combo Covers overview
 			</h1>
